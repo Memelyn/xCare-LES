@@ -15,10 +15,6 @@ public class Medicamento implements Serializable {
 
     private String descricao;
 
-
-
-
-
     public Integer getRegistroAnvisa() {
         return registroAnvisa;
     }
