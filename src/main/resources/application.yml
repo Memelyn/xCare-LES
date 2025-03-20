@@ -2,7 +2,7 @@ spring:
   application:
     name: xCare
   datasource:
-    driver-class-name: con.mysql.cj.jdbc.driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/xCare?useTimezone=true&serverTimezone=UTC
     username: root
     password:
@@ -11,5 +11,4 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
     show-sql: false
