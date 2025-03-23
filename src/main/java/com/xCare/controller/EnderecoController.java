@@ -1,7 +1,7 @@
 package com.xCare.controller;
 
-import com.xCare.Service.CuidadorServices;
-import com.xCare.model.Cuidador;
+import com.xCare.Service.EnderecoServices;
+import com.xCare.model.Endereco;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cuidador")
-public class CuidadorController {
+@RequestMapping("/Endereco")
+public class EnderecoController {
 
     @Autowired
 
-    private CuidadorServices service;
+    private EnderecoServices service;
 
     @GetMapping(value = "/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Cuidador findById(@PathVariable("id") Long id){
+    public Endereco findById(@PathVariable("id") Long id){
         return  service.findById(id);
     }
 
     @GetMapping(
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Cuidador> findAll(){
+    public List<Endereco> findAll(){
         return  service.findAll();
     }
 
@@ -33,16 +33,16 @@ public class CuidadorController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Cuidador create (@RequestBody Cuidador person){
-        return service.create(person);
+    public Endereco create (@RequestBody Endereco endereco){
+        return service.create(endereco);
     }
 
     @PutMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Cuidador update (@RequestBody Cuidador person){
-        return service.update(person);
+    public Endereco update (@RequestBody Endereco endereco){
+        return service.update(endereco);
     }
 
     @DeleteMapping(value = "/{id}")

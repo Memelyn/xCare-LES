@@ -3,15 +3,14 @@ package com.xCare.Service;
 import com.xCare.Exception.ResourceNotFoundException;
 import com.xCare.model.Cuidador;
 import com.xCare.repository.CuidadorRepository;
-import jakarta.persistence.Column;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+//import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
 public class CuidadorServices {
-    private final AtomicLong counter = new AtomicLong();
+   // private final AtomicLong counter = new AtomicLong();
 
     private Logger logger = Logger.getLogger(CuidadorServices.class.getName());
 

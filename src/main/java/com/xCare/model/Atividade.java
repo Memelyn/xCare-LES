@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Atividade implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
     @OneToOne
     @JoinColumn(name = "id_cuidador", unique = true, nullable = false)
@@ -26,7 +26,7 @@ public class Atividade implements Serializable {
     private String descricao;
 
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 

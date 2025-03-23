@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Relatorio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
     @OneToOne
     @JoinColumn(name = "id_cuidador", unique = true, nullable = false)
@@ -26,7 +26,7 @@ public class Relatorio implements Serializable {
     private String observacoes;
 
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 

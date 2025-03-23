@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Table(name = "item_medico")
 public class ItemMedico implements Serializable {
     @Id
-    private Integer registroAnvisa;
+    private long registroAnvisa;
 
     @Column(nullable = false)
     private String nome;
@@ -17,7 +17,7 @@ public class ItemMedico implements Serializable {
 
     private String tipoUnidade;
 
-    public Integer getRegistroAnvisa() {
+    public long getRegistroAnvisa() {
         return registroAnvisa;
     }
 

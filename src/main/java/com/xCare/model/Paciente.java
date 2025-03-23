@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Paciente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
     @Column(nullable = false)
     private String nome;
@@ -39,7 +39,7 @@ public class Paciente implements Serializable {
 
     private String planoSaude;
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 

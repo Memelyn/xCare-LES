@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Endereco implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
     @Column(nullable = false)
     private String tipoLogradouro;
@@ -28,7 +28,7 @@ public class Endereco implements Serializable {
     @Column(nullable = false)
     private String cep;
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 

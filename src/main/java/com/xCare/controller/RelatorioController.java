@@ -1,7 +1,7 @@
 package com.xCare.controller;
 
-import com.xCare.Service.CuidadorServices;
-import com.xCare.model.Cuidador;
+import com.xCare.Service.RelatorioServices;
+import com.xCare.model.Relatorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cuidador")
-public class CuidadorController {
+@RequestMapping("/Relatorio")
+public class RelatorioController {
 
     @Autowired
 
-    private CuidadorServices service;
+    private RelatorioServices service;
 
     @GetMapping(value = "/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Cuidador findById(@PathVariable("id") Long id){
+    public Relatorio findById(@PathVariable("id") Long id){
         return  service.findById(id);
     }
 
     @GetMapping(
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Cuidador> findAll(){
+    public List<Relatorio> findAll(){
         return  service.findAll();
     }
 
@@ -33,16 +33,16 @@ public class CuidadorController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Cuidador create (@RequestBody Cuidador person){
-        return service.create(person);
+    public Relatorio create (@RequestBody Relatorio relatorio){
+        return service.create(relatorio);
     }
 
     @PutMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Cuidador update (@RequestBody Cuidador person){
-        return service.update(person);
+    public Relatorio update (@RequestBody Relatorio relatorio){
+        return service.update(relatorio);
     }
 
     @DeleteMapping(value = "/{id}")
