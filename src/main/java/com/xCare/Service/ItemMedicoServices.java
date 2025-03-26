@@ -20,28 +20,28 @@ public class ItemMedicoServices {
 
     public List<ItemMedico> findAll(){
 
-        logger.info("Achando ItemMedicoes");
+        logger.info("Procurando ItemMedicos");
 
         return repository.findAll();
 
     }
 
     public ItemMedico create(ItemMedico itemMedico){
-        logger.info("criando ItemMedico");
+        logger.info("Criando ItemMedico");
         return repository.save(itemMedico);
     }
 
     public ItemMedico findById(Long id){
 
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("ItemMedico não encontrado"));
     }
 
     public ItemMedico update(ItemMedico itemMedico){
-        logger.info("updating ItemMedico");
+        logger.info("Atualizando ItemMedico");
 
         ItemMedico entity = repository.findById(itemMedico.getRegistroAnvisa())
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("ItemMedico não encontrado"));
 
         entity.setNome(itemMedico.getNome());
         entity.setDescricao(itemMedico.getDescricao());
@@ -52,10 +52,10 @@ public class ItemMedicoServices {
     }
 
     public void delete(Long id){
-        logger.info("Deleting one person");
+        logger.info("Excluindo ItemMedico");
 
         ItemMedico entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("ItemMedico não encontrado"));
 
         repository.delete(entity);
     }

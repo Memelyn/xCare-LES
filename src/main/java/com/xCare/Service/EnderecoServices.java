@@ -20,28 +20,28 @@ public class EnderecoServices {
 
     public List<Endereco> findAll(){
 
-        logger.info("Achando Enderecoes");
+        logger.info("Procurando Enderecos");
 
         return repository.findAll();
 
     }
 
     public Endereco create(Endereco endereco){
-        logger.info("criando Endereco");
+        logger.info("Criando Endereco");
         return repository.save(endereco);
     }
 
     public Endereco findById(Long id){
 
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Endereco não encontrado"));
     }
 
     public Endereco update(Endereco endereco){
-        logger.info("updating Endereco");
+        logger.info("Atualizando Endereco");
 
         Endereco entity = repository.findById(endereco.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Endereco não encontrado"));
 
         entity.setTipoLogradouro(endereco.getTipoLogradouro());
         entity.setNomeLogradouro(endereco.getNomeLogradouro());
@@ -54,10 +54,10 @@ public class EnderecoServices {
     }
 
     public void delete(Long id){
-        logger.info("Deleting one person");
+        logger.info("Excluindo Endereco");
 
         Endereco entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Endereco não encontrado"));
 
         repository.delete(entity);
     }

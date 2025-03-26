@@ -20,28 +20,28 @@ public class MedicamentoServices {
 
     public List<Medicamento> findAll(){
 
-        logger.info("Achando pacientes");
+        logger.info("Procurando Medicamentos");
 
         return repository.findAll();
 
     }
 
     public Medicamento create(Medicamento medicamento){
-        logger.info("criando paciente");
+        logger.info("Criando Medicamento");
         return repository.save(medicamento);
     }
 
     public Medicamento findById(Long id){
 
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Medicamento não encontrado"));
     }
 
     public Medicamento update(Medicamento medicamento){
-        logger.info("updating cuidador");
+        logger.info("Atualizando Medicamento");
 
         Medicamento entity = repository.findById(medicamento.getRegistroAnvisa())
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Medicamento não encontrado"));
 
         entity.setNome(medicamento.getNome());
         entity.setDescricao(medicamento.getDescricao());
@@ -51,10 +51,10 @@ public class MedicamentoServices {
     }
 
     public void delete(Long id){
-        logger.info("Deletando paciente");
+        logger.info("Excluindo Medicamento");
 
         Medicamento entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Medicamento não encontrado"));
 
         repository.delete(entity);
     }

@@ -20,28 +20,28 @@ public class AtividadeServices {
 
     public List<Atividade> findAll(){
 
-        logger.info("Achando Atividadees");
+        logger.info("Procurando Atividadees");
 
         return repository.findAll();
 
     }
 
     public Atividade create(Atividade atividade){
-        logger.info("criando Atividade");
+        logger.info("Criando Atividade");
         return repository.save(atividade);
     }
 
     public Atividade findById(Long id){
 
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Atividade não encontrada"));
     }
 
     public Atividade update(Atividade atividade){
-        logger.info("updating Atividade");
+        logger.info("Atualizando Atividade");
 
         Atividade entity = repository.findById(atividade.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Atividade não encontrada"));
 
         entity.setCuidador(atividade.getCuidador());
         entity.setPaciente(atividade.getPaciente());
@@ -52,10 +52,10 @@ public class AtividadeServices {
     }
 
     public void delete(Long id){
-        logger.info("Deleting one person");
+        logger.info("Excluindo Atividade");
 
         Atividade entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Atividade não encontrada"));
 
         repository.delete(entity);
     }

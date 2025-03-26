@@ -20,28 +20,28 @@ public class RelatorioServices {
 
     public List<Relatorio> findAll(){
 
-        logger.info("Achando pacientes");
+        logger.info("Procurando Relatórios");
 
         return repository.findAll();
 
     }
 
     public Relatorio create(Relatorio relatorio){
-        logger.info("criando paciente");
+        logger.info("Criando Relatorio");
         return repository.save(relatorio);
     }
 
     public Relatorio findById(Long id){
 
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Relatorio não encontrado"));
     }
 
     public Relatorio update(Relatorio relatorio){
-        logger.info("updating cuidador");
+        logger.info("Atualizando Relatorio");
 
         Relatorio entity = repository.findById(relatorio.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Relatorio não encontrado"));
 
         entity.setCuidador(relatorio.getCuidador());
         entity.setPaciente(relatorio.getPaciente());
@@ -53,10 +53,10 @@ public class RelatorioServices {
     }
 
     public void delete(Long id){
-        logger.info("Deletando paciente");
+        logger.info("Excluindo Relatorio");
 
         Relatorio entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Relatorio não encontrado"));
 
         repository.delete(entity);
     }

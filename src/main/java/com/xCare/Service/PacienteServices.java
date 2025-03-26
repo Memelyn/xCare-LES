@@ -21,28 +21,28 @@ public class PacienteServices {
 
     public List<Paciente> findAll(){
 
-        logger.info("Achando pacientes");
+        logger.info("Procurando Pacientes");
 
         return repository.findAll();
 
     }
 
     public Paciente create(Paciente paciente){
-        logger.info("criando paciente");
+        logger.info("Criando Paciente");
         return repository.save(paciente);
     }
 
     public Paciente findById(Long id){
 
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Paciente não encontrado"));
     }
 
     public Paciente update(Paciente paciente){
-        logger.info("updating cuidador");
+        logger.info("Atualizando Paciente");
 
         Paciente entity = repository.findById(paciente.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Paciente não encontrado"));
 
         entity.setNome(paciente.getNome());
         entity.setIdade(paciente.getIdade());
@@ -60,10 +60,10 @@ public class PacienteServices {
     }
 
     public void delete(Long id){
-        logger.info("Deletando paciente");
+        logger.info("Excluindo Paciente");
 
         Paciente entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Paciente não encontrado"));
 
         repository.delete(entity);
     }

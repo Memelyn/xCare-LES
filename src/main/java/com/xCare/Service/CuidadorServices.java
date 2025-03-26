@@ -19,28 +19,28 @@ public class CuidadorServices {
 
     public List<Cuidador> findAll(){
 
-        logger.info("Achando cuidadores");
+        logger.info("Procurando Cuidadores");
 
         return repository.findAll();
 
     }
 
     public Cuidador create(Cuidador cuidador){
-        logger.info("criando cuidador");
+        logger.info("Criando Cuidador");
         return repository.save(cuidador);
     }
 
     public Cuidador findById(Long id){
 
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Cuidador não encontrado"));
     }
 
     public Cuidador update(Cuidador cuidador){
-        logger.info("updating cuidador");
+        logger.info("Atualizando Cuidador");
 
         Cuidador entity = repository.findById(cuidador.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Cuidador não encontrado"));
 
         entity.setNome(cuidador.getNome());
         entity.setIdade(cuidador.getIdade());
@@ -58,10 +58,10 @@ public class CuidadorServices {
     }
 
     public void delete(Long id){
-        logger.info("Deleting one person");
+        logger.info("Excluindo Cuidador");
 
         Cuidador entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found for this id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Cuidador não encontrado"));
 
         repository.delete(entity);
     }

@@ -1,11 +1,11 @@
 package com.xCare.model;
 
 import jakarta.persistence.*;
-
+import java.util.List;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "relatorio")
+@Table(name = "Relatorio")
 public class Relatorio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +14,9 @@ public class Relatorio implements Serializable {
     @OneToOne
     @JoinColumn(name = "id_cuidador", unique = true, nullable = false)
     private Cuidador cuidador;
+
+    @OneToMany(mappedBy = "relatorio")
+    private List<Atividade> atividades;
 
     @OneToOne
     @JoinColumn(name = "id_paciente", unique = true, nullable = false)

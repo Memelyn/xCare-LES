@@ -5,27 +5,38 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "item_medico_endereco")
-public class ItemMedicoEndereco implements Serializable {
+@Table(name = "Endereco_item_medico")
+public class EnderecoItemMedico implements Serializable {
 
-    @OneToOne
-    @Id
-    @JoinColumn(name = "registro_anvisa_item_medico", unique = true, nullable = false)
+    @EmbeddedId
+    private EnderecoItemMedicoId id;
+
+    @ManyToOne
+    @JoinColumn(name = "registro_anvisa_item_medico", referencedColumnName = "registro_anvisa_item_medico", insertable = false, updatable = false)
     private ItemMedico itemMedico;
 
-    @OneToOne
-    @Id
-    @JoinColumn(name = "id_endereco", unique = true, nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_endereco", referencedColumnName = "id_endereco", insertable = false, updatable = false)
     private Endereco endereco;
 
     @Column(nullable = false, columnDefinition = "integer default 0")
     private Integer quantidade;
 
+    // Getters e setters
+
+    public EnderecoItemMedicoId getId() {
+        return id;
+    }
+
+    public void setId(EnderecoItemMedicoId id) {
+        this.id = id;
+    }
+
     public ItemMedico getItemMedico() {
         return itemMedico;
     }
 
-    public void set(ItemMedico itemMedico) {
+    public void setItemMedico(ItemMedico itemMedico) {
         this.itemMedico = itemMedico;
     }
 
