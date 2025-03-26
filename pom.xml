@@ -11,7 +11,7 @@
 	<groupId>com.xCare</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CursoUdemyJava</name>
+	<name>xCare</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<dozer.version>7.0.0</dozer.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -59,6 +60,13 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 
 		</dependency>
+
+		<dependency>
+			<groupId>com.github.dozermapper</groupId>
+			<artifactId>dozer-core</artifactId>
+			<version>${dozer.version}</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 		<dependency>
 			<groupId>com.mysql</groupId>

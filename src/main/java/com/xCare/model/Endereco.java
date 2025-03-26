@@ -28,6 +28,12 @@ public class Endereco implements Serializable {
     @Column(nullable = false)
     private String cep;
 
+    // Construtor
+    public Endereco() {
+
+    }
+
+    // Getters e Setters
     public long getId() {
         return id;
     }

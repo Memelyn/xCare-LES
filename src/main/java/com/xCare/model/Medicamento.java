@@ -15,6 +15,13 @@ public class Medicamento implements Serializable {
 
     private String descricao;
 
+    // Construtor
+    public Medicamento() {
+
+    }
+
+    // Getters e Setters
+
     public long getRegistroAnvisa() {
         return registroAnvisa;
     }

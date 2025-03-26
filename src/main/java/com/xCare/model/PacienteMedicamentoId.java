@@ -10,6 +10,11 @@ public class PacienteMedicamentoId implements Serializable {
     private Long idMedicamento;
     private Long idPaciente;
 
+    // Construtor
+    public PacienteMedicamentoId() {
+    }
+
+    // Construtor com parametros
     public PacienteMedicamentoId(Long idMedicamento, Long idPaciente) {
         this.idMedicamento = idMedicamento;
         this.idPaciente = idPaciente;

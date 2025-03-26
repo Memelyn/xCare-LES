@@ -12,15 +12,22 @@ public class EnderecoMedicamento implements Serializable {
     private EnderecoMedicamentoId id;
 
     @ManyToOne
-    @JoinColumn(name = "registro_anvisa_medicamento", referencedColumnName = "registro_anvisa_medicamento", insertable = false, updatable = false)
+    @JoinColumn(name = "registro_anvisa_medicamento", referencedColumnName = "registroAnvisa", insertable = false, updatable = false)
     private Medicamento medicamento;
 
     @ManyToOne
-    @JoinColumn(name = "id_endereco", referencedColumnName = "id_endereco", insertable = false, updatable = false)
+    @JoinColumn(name = "idEndereco", referencedColumnName = "id", insertable = false, updatable = false)
     private Endereco endereco;
 
     @Column(nullable = false, columnDefinition = "integer default 0")
     private Integer quantidade;
+
+    //Construtor
+
+
+    public EnderecoMedicamento() {
+
+    }
 
     // Getters e setters
     public EnderecoMedicamentoId getId() {

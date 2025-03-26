@@ -5,11 +5,13 @@ import com.xCare.model.Endereco;
 import com.xCare.repository.EnderecoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 //import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
+@Service
 public class EnderecoServices {
    // private final AtomicLong counter = new AtomicLong();
 

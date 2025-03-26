@@ -41,6 +41,10 @@ public class Cuidador implements Serializable {
     @Column(length = 50)
     private String especializacao;
 
+    public Cuidador() {
+
+    }
+
     public long getId() {
         return id;
     }

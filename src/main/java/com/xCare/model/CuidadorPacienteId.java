@@ -11,6 +11,11 @@ public class CuidadorPacienteId implements Serializable {
     private Long idCuidador;
     private Long idPaciente;
 
+    // Construtor
+    public CuidadorPacienteId() {
+
+    }
+
     // Construtor com parâmetros
     public CuidadorPacienteId(Long idCuidador, Long idPaciente) {
         this.idCuidador = idCuidador;

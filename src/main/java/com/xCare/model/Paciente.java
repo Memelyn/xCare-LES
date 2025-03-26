@@ -32,13 +32,19 @@ public class Paciente implements Serializable {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "id_endereco", unique = true, nullable = false)
+    @JoinColumn(name = "idEndereco", unique = true, nullable = false)
     private Endereco endereco;
 
     private String tipoSanguineo;
 
     private String planoSaude;
 
+    // Construtor
+    public Paciente() {
+
+    }
+
+    // Getters e Setters
     public long getId() {
         return id;
     }

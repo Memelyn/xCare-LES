@@ -13,11 +13,11 @@ public class PacienteMedicamento implements Serializable {
     private PacienteMedicamentoId id;
 
     @ManyToOne
-    @JoinColumn(name = "registro_anvisa_medicamento", referencedColumnName = "registro_anvisa_medicamento", insertable = false, updatable = false)
+    @JoinColumn(name = "registro_anvisa_medicamento", referencedColumnName = "registroAnvisa", insertable = false, updatable = false)
     private Medicamento medicamento;
 
     @ManyToOne
-    @JoinColumn(name = "id_paciente", referencedColumnName = "id_paciente", insertable = false, updatable = false)
+    @JoinColumn(name = "idPaciente", referencedColumnName = "id", insertable = false, updatable = false)
     private Paciente paciente;
 
     @Column(nullable = false)
@@ -25,6 +25,10 @@ public class PacienteMedicamento implements Serializable {
 
     @Column(nullable = false)
     private Integer quantiaDose;
+
+    public PacienteMedicamento() {
+
+    }
 
     // Getters e setters
     public PacienteMedicamentoId getId() {

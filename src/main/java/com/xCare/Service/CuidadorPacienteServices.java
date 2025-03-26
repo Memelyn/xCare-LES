@@ -6,10 +6,11 @@ import com.xCare.model.CuidadorPacienteId;
 import com.xCare.repository.CuidadorPacienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.logging.Logger;
-
+@Service
 public class CuidadorPacienteServices {
 
     private Logger logger = Logger.getLogger(CuidadorPacienteServices.class.getName());

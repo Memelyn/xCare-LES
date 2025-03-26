@@ -17,6 +17,12 @@ public class ItemMedico implements Serializable {
 
     private String tipoUnidade;
 
+    //Construtor
+
+    public ItemMedico() {
+
+    }
+
     public long getRegistroAnvisa() {
         return registroAnvisa;
     }

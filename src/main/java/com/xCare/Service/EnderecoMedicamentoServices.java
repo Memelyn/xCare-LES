@@ -6,10 +6,12 @@ import com.xCare.model.EnderecoMedicamentoId;
 import com.xCare.repository.EnderecoMedicamentoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.logging.Logger;
 
+@Service
 public class EnderecoMedicamentoServices {
 
     private Logger logger = Logger.getLogger(EnderecoMedicamentoServices.class.getName());

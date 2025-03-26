@@ -10,12 +10,14 @@ public class EnderecoMedicamentoId implements Serializable {
     private Long idMedicamento;
     private Long idEndereco;
 
+    // Construtor
     public EnderecoMedicamentoId() {
     }
 
-    public EnderecoMedicamentoId(Long idEndereco, Long idMedicamento) {
-        this.idEndereco = idEndereco;
+    // Construtor com parãmetros
+    public EnderecoMedicamentoId(Long idMedicamento, Long idEndereco) {
         this.idMedicamento = idMedicamento;
+        this.idEndereco = idEndereco;
     }
 
     // Getters e setters

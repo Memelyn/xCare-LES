@@ -12,15 +12,15 @@ public class Atividade implements Serializable {
     private long id;
 
     @OneToOne
-    @JoinColumn(name = "id_cuidador", unique = true, nullable = false)
+    @JoinColumn(name = "idCuidador", unique = true, nullable = false)
     private Cuidador cuidador;
 
     @OneToOne
-    @JoinColumn(name = "id_paciente", unique = true, nullable = false)
+    @JoinColumn(name = "idPaciente", unique = true, nullable = false)
     private Paciente paciente;
 
     @ManyToOne // Cada atividade pertence a um relatório
-    @JoinColumn(name = "relatorio_id", nullable = true)  // Relatório ainda pode ser nulo inicialmente
+    @JoinColumn(name = "id_relatorio", nullable = true)  // Relatório ainda pode ser nulo inicialmente
     private Relatorio relatorio;
 
     @Column(unique = true, nullable = false)
@@ -29,6 +29,9 @@ public class Atividade implements Serializable {
     @Column(nullable = false)
     private String descricao;
 
+    public Atividade() {
+
+    }
 
     public long getId() {
         return id;

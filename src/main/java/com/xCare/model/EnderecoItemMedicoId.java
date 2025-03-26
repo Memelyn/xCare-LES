@@ -11,10 +11,18 @@ public class EnderecoItemMedicoId implements Serializable {
     private Long idEndereco;
     private Long IditemMedico;
 
-    public EnderecoItemMedicoId(Long idEndereco, Long IditemMedico) {
-        this.idEndereco = idEndereco;
-        this.IditemMedico = IditemMedico;
+    // Construtor
+    public EnderecoItemMedicoId() {
+
     }
+
+    // Construtor com parâmetros
+
+    public EnderecoItemMedicoId(Long idEndereco, Long iditemMedico) {
+        this.idEndereco = idEndereco;
+        IditemMedico = iditemMedico;
+    }
+
 
     // Getters e setters
 

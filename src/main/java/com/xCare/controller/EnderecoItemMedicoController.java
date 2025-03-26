@@ -21,7 +21,7 @@ public class EnderecoItemMedicoController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public EnderecoItemMedico findById(@PathVariable("enderecoId") Long enderecoId,
                                        @PathVariable("itemMedicoId") Long itemMedicoId){
-        EnderecoItemMedicoId id = new EnderecoItemMedicoId(enderecoId, itemMedicoId);  
+        EnderecoItemMedicoId id = new EnderecoItemMedicoId(enderecoId, itemMedicoId);
         return service.findById(id);
     }
 
@@ -49,7 +49,7 @@ public class EnderecoItemMedicoController {
     @DeleteMapping(value = "/{enderecoId}/{itemMedicoId}")
     public ResponseEntity<?> delete(@PathVariable("enderecoId") Long enderecoId,
                                     @PathVariable("itemMedicoId") Long itemMedicoId){
-        EnderecoItemMedicoId id = new EnderecoItemMedicoId(enderecoId, itemMedicoId);                                
+        EnderecoItemMedicoId id = new EnderecoItemMedicoId(enderecoId, itemMedicoId);
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

@@ -12,14 +12,14 @@ public class Relatorio implements Serializable {
     private long id;
 
     @OneToOne
-    @JoinColumn(name = "id_cuidador", unique = true, nullable = false)
+    @JoinColumn(name = "idCuidador", unique = true, nullable = false)
     private Cuidador cuidador;
 
     @OneToMany(mappedBy = "relatorio")
     private List<Atividade> atividades;
 
     @OneToOne
-    @JoinColumn(name = "id_paciente", unique = true, nullable = false)
+    @JoinColumn(name = "idPaciente", unique = true, nullable = false)
     private Paciente paciente;
 
     private String dataInicio;
@@ -28,7 +28,11 @@ public class Relatorio implements Serializable {
 
     private String observacoes;
 
+    public Relatorio() {
 
+    }
+
+    // Getters e Setters
     public long getId() {
         return id;
     }

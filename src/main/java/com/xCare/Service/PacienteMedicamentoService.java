@@ -36,7 +36,7 @@ public class PacienteMedicamentoService {
         entity.setPaciente(pacienteMedicamento.getPaciente());
         entity.setHorario(pacienteMedicamento.getHorario());
         entity.setQuantiaDose(pacienteMedicamento.getQuantiaDose());
-        
+
         return repository.save(pacienteMedicamento);
     }
 

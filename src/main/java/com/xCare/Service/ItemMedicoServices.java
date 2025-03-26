@@ -5,11 +5,13 @@ import com.xCare.model.ItemMedico;
 import com.xCare.repository.ItemMedicoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 //import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
+@Service
 public class ItemMedicoServices {
    // private final AtomicLong counter = new AtomicLong();
 

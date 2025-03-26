@@ -12,12 +12,17 @@ public class CuidadorPaciente implements Serializable {
     private CuidadorPacienteId id;
 
     @ManyToOne
-    @JoinColumn(name = "id_cuidador", referencedColumnName = "id_cuidador", insertable = false, updatable = false)
+    @JoinColumn(name = "idCuidador", referencedColumnName = "id", insertable = false, updatable = false)
     private Cuidador cuidador;
 
     @ManyToOne
-    @JoinColumn(name = "id_paciente", referencedColumnName = "id_paciente", insertable = false, updatable = false)
+    @JoinColumn(name = "idPaciente", referencedColumnName = "id", insertable = false, updatable = false)
     private Paciente paciente;
+
+    public CuidadorPaciente() {
+
+    }
+
 
     // Getters e setters
     public CuidadorPacienteId getId() {
